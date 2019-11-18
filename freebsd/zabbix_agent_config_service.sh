@@ -18,6 +18,7 @@ _freebsd_zabbix_config_file(){
     if [ -f ${zabbix_agent_conf_file} ]; then
         cp ${zabbix_agent_conf_file} ${zabbix_agent_conf_file}.samples
     fi
+    touch ${zabbix_agent_conf_file}
 
     [ -f "${zabbix_agent_conf_file}" ] &&
         echo ${zabbix_agent_conf_file} ||
