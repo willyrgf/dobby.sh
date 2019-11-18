@@ -1,8 +1,10 @@
 #!/bin/sh
 
-os_namespace=$(uname | tr 'A-Z' 'a-z')
+set -x
 
-if [[ ! -n ${os} ]]; then
+os_namespace=$(uname | tr 'A-Z' 'a-z') || exit 1
+
+if [ ${os_namespace} == "" ]; then
     exit 1
 fi
 
