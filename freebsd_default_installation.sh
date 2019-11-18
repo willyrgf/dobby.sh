@@ -21,6 +21,8 @@ _install_packages() {
 
 _main() {
     _set_env_vars
+    _set_packages
+
     _install_packages
 }
 
