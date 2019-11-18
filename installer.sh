@@ -14,8 +14,8 @@ _set_main_envs() {
 }
 
 _main() {
-    source ${os_namespace}/default_installation.sh || exit 1
     _set_main_envs
+    . ${os_namespace}/default_installation.sh || exit 1
     _${os_namespace}_main $@
 }
 

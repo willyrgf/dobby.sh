@@ -40,5 +40,3 @@ _freebsd_main() {
     _freebsd_upgrade
     _freebsd_install_packages
 }
-
-_${NAMESPACE}_main $@
