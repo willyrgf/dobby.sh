@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -x
 
@@ -11,10 +11,15 @@ fi
 _set_main_envs() {
     export \
         RUN_UPGRADE=true
+        SERVICES='zabbix_agent'
 }
 
 _main() {
-    _${os_namespace}_zabbix_agent_main
+    for service in ${SERVICES}; do
+        source ${os_namespace}/${service}_config_service.sh ||
+            exit 1
+        _${os_namespace}_${service}_main
+    done
 }
 
 _main $@
