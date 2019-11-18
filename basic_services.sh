@@ -12,9 +12,12 @@ _set_main_envs() {
     export \
         RUN_UPGRADE=true
         SERVICES='zabbix_agent'
+        NULL='/dev/null'
 }
 
 _main() {
+    _set_main_envs
+
     for service in ${SERVICES}; do
         source ${os_namespace}/${service}_config_service.sh ||
             exit 1
