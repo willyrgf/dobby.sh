@@ -15,7 +15,9 @@ _freebsd_set_env_vars() {
 
 _freebsd_set_packages() {
     export \
-        PACKAGES='vim git zabbix4-agent bash ctags'
+        PACKAGES='vim git zabbix4-agent bash ctags
+            tcpdump iftop lsof bind-tools wget sudo
+            ntpdate'
 }
 
 _freebsd_install_packages() {
