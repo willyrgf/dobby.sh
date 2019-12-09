@@ -17,6 +17,9 @@ _main() {
     _set_main_envs
     . ${os_namespace}/default_installation.sh || exit 1
     _${os_namespace}_main $@
+
+    . ${os_namespace}/basic_environment_install.sh || exit 1
+    _${os_namespace}_main $@
 }
 
 _main $@
